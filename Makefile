@@ -8,6 +8,7 @@ prod-files:
 	make bom
 
 new:
+	git submodule add git@github.com:joshajohnson/josh-kicad-lib.git
 	git submodule update --init --recursive --progress
 	cd josh-kicad-lib && git checkout master && git pull
 	cd josh-kicad-lib && bash setup.sh "$(VERSION)" "$(NAME)" "$(DESIGNER)"
